@@ -26,14 +26,39 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-20 bg-section-gradient">
+    <section id="about" className="py-20 bg-slate-100 ml-72">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">About Me</h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            I'm a passionate developer with 5+ years of experience creating digital solutions. 
-            I love turning complex problems into simple, beautiful, and intuitive designs.
-          </p>
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-slate-800">About Me</h2>
+          <div className="max-w-4xl mx-auto">
+            <h3 className="text-2xl font-semibold text-blue-600 mb-4">Business Analyst | Data Scientist</h3>
+            <p className="text-xl text-slate-600 mb-6">
+              Based in Nairobi, Kenya
+            </p>
+            <p className="text-lg text-slate-700 leading-relaxed mb-6">
+              Analytical and results-driven professional with a proven track record in data analytics, machine learning, and predictive modeling. 
+              I excel at interpreting complex datasets to drive strategy and achieve organizational goals. Skilled at deploying data-driven 
+              solutions to drive efficiency, accuracy, and actionable insights.
+            </p>
+            <div className="grid md:grid-cols-2 gap-6 text-left max-w-2xl mx-auto">
+              <div>
+                <h4 className="font-semibold text-slate-700 mb-2">📧 Email:</h4>
+                <p className="text-slate-600">georgegichure007@gmail.com</p>
+              </div>
+              <div>
+                <h4 className="font-semibold text-slate-700 mb-2">📱 Phone:</h4>
+                <p className="text-slate-600">0718089143</p>
+              </div>
+              <div>
+                <h4 className="font-semibold text-slate-700 mb-2">🎓 Education:</h4>
+                <p className="text-slate-600">Bachelor of Science (Computer Science)</p>
+              </div>
+              <div>
+                <h4 className="font-semibold text-slate-700 mb-2">🌐 Languages:</h4>
+                <p className="text-slate-600">English, Swahili, French</p>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
