@@ -1,43 +1,103 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ExternalLink, Github } from "lucide-react";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { ExternalLink, Github, Database, BarChart3, Cloud, Code } from "lucide-react";
 
 const Projects = () => {
-  const projects = [
-    {
-      title: "Business Intelligence Deployment",
-      description: "End-to-end BI implementation across 10+ major companies including banks and telecoms, integrating Qlik, Power BI with SAP, Oracle systems.",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
-      technologies: ["Qlik", "Power BI", "SAP", "Oracle", "Tableau"],
-      clients: ["Exim Bank", "Bank of Tanzania", "KWFT", "Rubis", "Post Bank Tanzania"],
-      achievements: ["20% efficiency increase", "100% data accuracy", "25% faster delivery"]
+  const projectsByTechnology = {
+    powerbi: {
+      icon: BarChart3,
+      name: "Power BI",
+      color: "yellow",
+      projects: [
+        {
+          title: "Banking Analytics Dashboard",
+          description: "Comprehensive BI solution for major East African banks with real-time transaction monitoring.",
+          type: "Professional",
+          technologies: ["Power BI", "SQL Server", "Azure"],
+          achievements: ["100% data accuracy", "Real-time insights", "Regulatory compliance"],
+          confidential: true
+        },
+        {
+          title: "Financial Performance Tracker",
+          description: "Personal project tracking investment portfolio performance with automated reporting.",
+          type: "Personal",
+          technologies: ["Power BI", "Excel", "Python"],
+          achievements: ["Automated reporting", "Portfolio optimization", "Risk analysis"],
+          githubUrl: "https://github.com/georgegichure"
+        }
+      ]
     },
-    {
-      title: "Claims Analytics Dashboard",
-      description: "Designed comprehensive analytics dashboard for insurance claim distribution analysis across multiple parameters and risk factors.",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop",
-      technologies: ["Tableau", "Python", "SQL", "Advanced Excel"],
-      clients: ["GA Insurance"],
-      achievements: ["50% insight improvement", "Automated reporting", "Risk pattern identification"]
+    tableau: {
+      icon: BarChart3,
+      name: "Tableau",
+      color: "blue",
+      projects: [
+        {
+          title: "Claims Analytics Dashboard",
+          description: "Insurance claim distribution analysis across multiple parameters for GA Insurance.",
+          type: "Professional",
+          technologies: ["Tableau", "Python", "SQL"],
+          achievements: ["50% insight improvement", "Automated reporting", "Risk pattern identification"],
+          confidential: true
+        }
+      ]
     },
-    {
-      title: "Automated ETL Workflows",
-      description: "Developed automated data pipelines reducing manual effort by 5 hours per week and achieving 100% reporting efficiency increase.",
-      image: "https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=600&h=400&fit=crop",
-      technologies: ["Python", "Apache Spark", "SQL", "Oracle"],
-      clients: ["Nairobi Municipality", "Career Connection"],
-      achievements: ["100% efficiency increase", "5 hours saved weekly", "40% faster retrieval"]
+    qlik: {
+      icon: Database,
+      name: "Qlik Sense",
+      color: "green",
+      projects: [
+        {
+          title: "Telecom Operations Analytics",
+          description: "Real-time operational dashboard for major telecom provider with KPI monitoring.",
+          type: "Professional",
+          technologies: ["Qlik Sense", "Oracle", "REST APIs"],
+          achievements: ["25% faster delivery", "Real-time monitoring", "Cost optimization"],
+          confidential: true
+        }
+      ]
     },
-    {
-      title: "Data Mining & Optimization",
-      description: "Conducted extensive data mining using Oracle, uncovering insights that increased operational efficiency by 20% across multiple sectors.",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
-      technologies: ["Oracle", "Python", "Data Mining", "Statistical Analysis"],
-      clients: ["Kenya Builders", "Furniture Palace", "Ukulima Sacco"],
-      achievements: ["20% efficiency increase", "Data-driven insights", "Optimized operations"]
+    python: {
+      icon: Code,
+      name: "Python & Analytics",
+      color: "purple",
+      projects: [
+        {
+          title: "Automated ETL Pipeline",
+          description: "Python-based ETL workflows reducing manual effort by 5 hours weekly.",
+          type: "Professional",
+          technologies: ["Python", "Apache Spark", "SQL", "Oracle"],
+          achievements: ["100% efficiency increase", "5 hours saved weekly", "40% faster retrieval"],
+          confidential: true
+        },
+        {
+          title: "COVID-19 Data Analysis",
+          description: "Personal project analyzing COVID-19 trends using Python and machine learning.",
+          type: "Personal",
+          technologies: ["Python", "Pandas", "Matplotlib", "Scikit-learn"],
+          achievements: ["Trend prediction", "Data visualization", "Statistical modeling"],
+          githubUrl: "https://github.com/georgegichure/covid-analysis"
+        }
+      ]
+    },
+    sql: {
+      icon: Database,
+      name: "SQL & Databases",
+      color: "indigo",
+      projects: [
+        {
+          title: "Data Mining & Optimization",
+          description: "Oracle-based data mining uncovering insights that increased efficiency by 20%.",
+          type: "Professional",
+          technologies: ["Oracle", "SQL", "Data Mining", "Statistical Analysis"],
+          achievements: ["20% efficiency increase", "Data-driven insights", "Optimized operations"],
+          confidential: true
+        }
+      ]
     }
-  ];
+  };
 
   const certifications = [
     { name: "Microsoft Power BI Data Analyst Associate", icon: "🥇", platform: "Microsoft" },
@@ -50,90 +110,129 @@ const Projects = () => {
     { name: "PWC - Power BI Job Simulation", icon: "💼", platform: "PWC" }
   ];
 
+  const getColorClasses = (color: string) => {
+    const colorMap: Record<string, string> = {
+      yellow: "border-l-yellow-500 bg-yellow-50",
+      blue: "border-l-blue-500 bg-blue-50", 
+      green: "border-l-green-500 bg-green-50",
+      purple: "border-l-purple-500 bg-purple-50",
+      indigo: "border-l-indigo-500 bg-indigo-50"
+    };
+    return colorMap[color] || "border-l-blue-500 bg-blue-50";
+  };
+
   return (
     <section id="projects" className="py-20 bg-white ml-72">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-slate-800">Featured Projects</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-slate-800">Projects & Portfolio</h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-            Real-world data solutions that delivered measurable business impact across industries
+            Explore my work organized by technology stack and project type
           </p>
         </div>
 
+        <Tabs defaultValue="powerbi" className="w-full">
+          <TabsList className="grid w-full grid-cols-5 mb-8">
+            {Object.entries(projectsByTechnology).map(([key, tech]) => (
+              <TabsTrigger key={key} value={key} className="flex items-center gap-2">
+                <tech.icon size={16} />
+                <span className="hidden sm:inline">{tech.name}</span>
+              </TabsTrigger>
+            ))}
+          </TabsList>
+
+          {Object.entries(projectsByTechnology).map(([key, tech]) => (
+            <TabsContent key={key} value={key}>
+              <div className="grid md:grid-cols-2 gap-6">
+                {tech.projects.map((project, index) => (
+                  <Card 
+                    key={index} 
+                    className={`overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group border-l-4 ${getColorClasses(tech.color)}`}
+                  >
+                    <CardHeader>
+                      <div className="flex justify-between items-start mb-2">
+                        <Badge 
+                          variant={project.type === 'Professional' ? 'default' : 'secondary'}
+                          className={project.type === 'Professional' ? 'bg-blue-600 text-white' : 'bg-green-100 text-green-800'}
+                        >
+                          {project.type}
+                        </Badge>
+                        {project.confidential && (
+                          <Badge variant="outline" className="text-orange-600 border-orange-300">
+                            Confidential
+                          </Badge>
+                        )}
+                      </div>
+                      <CardTitle className="text-xl text-slate-800">{project.title}</CardTitle>
+                    </CardHeader>
+                    <CardContent className="space-y-4">
+                      <p className="text-slate-600 leading-relaxed">
+                        {project.description}
+                        {project.confidential && (
+                          <span className="block text-sm text-orange-600 mt-2">
+                            * Details limited due to client confidentiality
+                          </span>
+                        )}
+                      </p>
+                      
+                      <div>
+                        <h4 className="font-semibold text-sm text-slate-700 mb-2">Technologies:</h4>
+                        <div className="flex flex-wrap gap-2">
+                          {project.technologies.map((tech, techIndex) => (
+                            <Badge key={techIndex} variant="secondary" className="bg-slate-100 text-slate-700">
+                              {tech}
+                            </Badge>
+                          ))}
+                        </div>
+                      </div>
+
+                      <div>
+                        <h4 className="font-semibold text-sm text-slate-700 mb-2">Key Achievements:</h4>
+                        <ul className="text-sm text-slate-600 space-y-1">
+                          {project.achievements.map((achievement, achIndex) => (
+                            <li key={achIndex} className="flex items-center gap-2">
+                              <span className="w-1 h-1 bg-green-500 rounded-full"></span>
+                              {achievement}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      {project.githubUrl && (
+                        <div className="pt-2">
+                          <Button 
+                            variant="outline" 
+                            size="sm"
+                            onClick={() => window.open(project.githubUrl, '_blank')}
+                            className="group-hover:bg-slate-50"
+                          >
+                            <Github size={16} className="mr-2" />
+                            View Code
+                          </Button>
+                        </div>
+                      )}
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </TabsContent>
+          ))}
+        </Tabs>
+
         {/* Certifications Section */}
-        <div className="mb-16">
+        <div className="mt-20 mb-16">
           <h3 className="text-3xl font-bold text-slate-800 text-center mb-8">Certifications & Achievements</h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {certifications.map((cert, index) => (
-              <Card key={index} className="text-center hover:shadow-md transition-shadow p-4">
+              <Card key={index} className="text-center hover:shadow-md transition-shadow p-4 border-l-4 border-l-green-500">
                 <div className="text-2xl mb-2">{cert.icon}</div>
                 <h4 className="font-semibold text-sm text-slate-800 mb-1">{cert.name}</h4>
-                <Badge variant="outline" className="text-xs">{cert.platform}</Badge>
+                <Badge variant="outline" className="text-xs bg-green-50 text-green-700 border-green-200">
+                  {cert.platform}
+                </Badge>
               </Card>
             ))}
           </div>
-        </div>
-
-        <div className="grid md:grid-cols-2 gap-8">
-          {projects.map((project, index) => (
-            <Card 
-              key={index} 
-              className="overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group border-l-4 border-l-blue-500"
-            >
-              <div className="relative overflow-hidden">
-                <img 
-                  src={project.image} 
-                  alt={project.title}
-                  className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
-                />
-                <div className="absolute top-4 right-4">
-                  <Badge className="bg-blue-600 text-white">Data Project</Badge>
-                </div>
-              </div>
-              <CardHeader>
-                <CardTitle className="text-xl text-slate-800">{project.title}</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <p className="text-slate-600 leading-relaxed">
-                  {project.description}
-                </p>
-                
-                <div>
-                  <h4 className="font-semibold text-sm text-slate-700 mb-2">Technologies:</h4>
-                  <div className="flex flex-wrap gap-2">
-                    {project.technologies.map((tech, techIndex) => (
-                      <Badge key={techIndex} variant="secondary" className="bg-blue-100 text-blue-800">
-                        {tech}
-                      </Badge>
-                    ))}
-                  </div>
-                </div>
-
-                <div>
-                  <h4 className="font-semibold text-sm text-slate-700 mb-2">Key Clients:</h4>
-                  <div className="flex flex-wrap gap-2">
-                    {project.clients.map((client, clientIndex) => (
-                      <Badge key={clientIndex} variant="outline" className="text-xs">
-                        {client}
-                      </Badge>
-                    ))}
-                  </div>
-                </div>
-
-                <div>
-                  <h4 className="font-semibold text-sm text-slate-700 mb-2">Achievements:</h4>
-                  <ul className="text-sm text-slate-600 space-y-1">
-                    {project.achievements.map((achievement, achIndex) => (
-                      <li key={achIndex} className="flex items-center gap-2">
-                        <span className="w-1 h-1 bg-green-500 rounded-full"></span>
-                        {achievement}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
         </div>
 
         <div className="text-center mt-12">
@@ -147,11 +246,15 @@ const Projects = () => {
               <p className="text-slate-600">Data Accuracy Achieved</p>
             </Card>
             <Card className="text-center p-6 bg-gradient-to-br from-purple-50 to-purple-100">
-              <h4 className="text-3xl font-bold text-purple-600 mb-2">50+</h4>
-              <p className="text-slate-600">Users Trained</p>
+              <h4 className="text-3xl font-bold text-purple-600 mb-2">25+</h4>
+              <p className="text-slate-600">Projects Completed</p>
             </Card>
           </div>
-          <Button className="bg-blue-600 hover:bg-blue-700 text-white">
+          <Button 
+            className="bg-blue-600 hover:bg-blue-700 text-white"
+            onClick={() => window.open("https://github.com/georgegichure", '_blank')}
+          >
+            <Github size={20} className="mr-2" />
             View Portfolio on GitHub
           </Button>
         </div>

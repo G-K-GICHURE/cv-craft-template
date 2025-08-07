@@ -1,4 +1,4 @@
-import { User, Home, FileText, Briefcase, Wrench, Mail, Linkedin, Github, Phone } from "lucide-react";
+import { User, Home, FileText, Briefcase, Wrench, Mail, Linkedin, Github, Phone, BookOpen, Award } from "lucide-react";
 import georgePhoto from "@/assets/george-photo.png";
 
 const Sidebar = () => {
@@ -82,11 +82,27 @@ const Sidebar = () => {
         </button>
         
         <button 
+          onClick={() => scrollToSection('skills')}
+          className="w-full flex items-center gap-3 px-4 py-3 text-left hover:bg-white/10 rounded-lg transition-colors group"
+        >
+          <Award size={18} className="text-blue-400 group-hover:text-white" />
+          <span>Skills</span>
+        </button>
+        
+        <button 
           onClick={() => scrollToSection('projects')}
           className="w-full flex items-center gap-3 px-4 py-3 text-left hover:bg-white/10 rounded-lg transition-colors group"
         >
           <Briefcase size={18} className="text-blue-400 group-hover:text-white" />
           <span>Portfolio</span>
+        </button>
+        
+        <button 
+          onClick={() => scrollToSection('blogs')}
+          className="w-full flex items-center gap-3 px-4 py-3 text-left hover:bg-white/10 rounded-lg transition-colors group"
+        >
+          <BookOpen size={18} className="text-blue-400 group-hover:text-white" />
+          <span>Blogs</span>
         </button>
         
         <button 

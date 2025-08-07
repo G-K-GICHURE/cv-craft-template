@@ -1,7 +1,26 @@
 import { Button } from "@/components/ui/button";
 import { ArrowDown } from "lucide-react";
+import { useState, useEffect } from "react";
 
 const Hero = () => {
+  const roles = [
+    "Data Scientist",
+    "Data Analyst", 
+    "Business Analyst",
+    "Business Developer",
+    "Data Engineer"
+  ];
+  
+  const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentRoleIndex((prev) => (prev + 1) % roles.length);
+    }, 3000); // Change every 3 seconds
+
+    return () => clearInterval(interval);
+  }, []);
+
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -22,8 +41,8 @@ const Hero = () => {
           <h1 className="text-5xl md:text-7xl font-bold mb-6 text-white animate-fade-in">
             George <span className="text-blue-400">Gichure</span>
           </h1>
-          <p className="text-2xl md:text-3xl mb-4 text-blue-400 font-medium animate-fade-in" style={{ animationDelay: '0.2s' }}>
-            I'm a Data Engineer
+          <p className="text-2xl md:text-3xl mb-4 text-blue-400 font-medium animate-fade-in transition-all duration-500" style={{ animationDelay: '0.2s' }}>
+            I'm a <span className="inline-block min-w-[200px] text-left">{roles[currentRoleIndex]}</span>
           </p>
           <p className="text-xl md:text-2xl mb-8 text-white/80 leading-relaxed animate-fade-in max-w-3xl mx-auto" style={{ animationDelay: '0.4s' }}>
             Analytical and results-driven professional with proven expertise in data analytics, machine learning, and predictive modeling. Skilled at transforming complex datasets into actionable business insights.

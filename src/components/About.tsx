@@ -40,7 +40,7 @@ const About = () => {
               I excel at interpreting complex datasets to drive strategy and achieve organizational goals. Skilled at deploying data-driven 
               solutions to drive efficiency, accuracy, and actionable insights.
             </p>
-            <div className="grid md:grid-cols-2 gap-6 text-left max-w-2xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-6 text-left max-w-3xl mx-auto">
               <div>
                 <h4 className="font-semibold text-slate-700 mb-2">📧 Email:</h4>
                 <p className="text-slate-600">georgegichure007@gmail.com</p>
@@ -50,12 +50,35 @@ const About = () => {
                 <p className="text-slate-600">0718089143</p>
               </div>
               <div>
-                <h4 className="font-semibold text-slate-700 mb-2">🎓 Education:</h4>
-                <p className="text-slate-600">Bachelor of Science (Computer Science)</p>
-              </div>
-              <div>
                 <h4 className="font-semibold text-slate-700 mb-2">🌐 Languages:</h4>
                 <p className="text-slate-600">English, Swahili, French</p>
+              </div>
+              <div>
+                <h4 className="font-semibold text-slate-700 mb-2">📍 Location:</h4>
+                <p className="text-slate-600">Nairobi, Kenya</p>
+              </div>
+            </div>
+
+            {/* Education Section */}
+            <div className="mt-12">
+              <h3 className="text-2xl font-bold text-slate-800 mb-6">🎓 Educational Background</h3>
+              <div className="grid md:grid-cols-2 gap-6">
+                <Card className="p-6 border-l-4 border-l-blue-500">
+                  <h4 className="font-semibold text-lg text-slate-800 mb-2">Bachelor of Science in Computer Science</h4>
+                  <p className="text-slate-600 mb-2">Major University</p>
+                  <p className="text-sm text-slate-500">2018 - 2022</p>
+                  <p className="text-sm text-slate-600 mt-2">
+                    Focused on Data Structures, Algorithms, Database Systems, and Statistical Computing
+                  </p>
+                </Card>
+                <Card className="p-6 border-l-4 border-l-green-500">
+                  <h4 className="font-semibold text-lg text-slate-800 mb-2">Professional Certifications</h4>
+                  <p className="text-slate-600 mb-2">Microsoft, IBM & Others</p>
+                  <p className="text-sm text-slate-500">2022 - Present</p>
+                  <p className="text-sm text-slate-600 mt-2">
+                    Specialized certifications in Power BI, Python Data Analysis, and Big Data Technologies
+                  </p>
+                </Card>
               </div>
             </div>
           </div>
@@ -86,17 +109,19 @@ const About = () => {
             <div>
               <h3 className="text-2xl font-bold mb-4 text-card-foreground">My Journey</h3>
               <p className="text-muted-foreground mb-4">
-                Started my career as a frontend developer and gradually expanded into full-stack development. 
-                I'm passionate about creating seamless user experiences and writing clean, maintainable code.
+                Started as a data analyst and evolved into a comprehensive data professional with expertise spanning 
+                business intelligence, data engineering, and predictive analytics. I've worked across banking, telecom, 
+                and government sectors, delivering data-driven solutions that drive real business impact.
               </p>
               <p className="text-muted-foreground">
-                When I'm not coding, you can find me exploring new technologies, contributing to open source projects, 
-                or sharing knowledge with the developer community.
+                My passion lies in transforming complex datasets into actionable insights that empower 
+                decision-makers and drive organizational success. I believe in the power of data to solve 
+                real-world problems and create meaningful change.
               </p>
             </div>
             <div className="space-y-4">
               <div className="flex justify-between items-center">
-                <span className="font-medium text-card-foreground">React & TypeScript</span>
+                <span className="font-medium text-card-foreground">Data Analytics & BI</span>
                 <span className="text-primary font-semibold">95%</span>
               </div>
               <div className="w-full bg-muted rounded-full h-2">
@@ -104,15 +129,15 @@ const About = () => {
               </div>
               
               <div className="flex justify-between items-center">
-                <span className="font-medium text-card-foreground">Node.js & Databases</span>
-                <span className="text-primary font-semibold">90%</span>
+                <span className="font-medium text-card-foreground">Python & SQL</span>
+                <span className="text-primary font-semibold">92%</span>
               </div>
               <div className="w-full bg-muted rounded-full h-2">
-                <div className="bg-primary h-2 rounded-full" style={{ width: '90%' }}></div>
+                <div className="bg-primary h-2 rounded-full" style={{ width: '92%' }}></div>
               </div>
               
               <div className="flex justify-between items-center">
-                <span className="font-medium text-card-foreground">UI/UX Design</span>
+                <span className="font-medium text-card-foreground">Machine Learning</span>
                 <span className="text-primary font-semibold">85%</span>
               </div>
               <div className="w-full bg-muted rounded-full h-2">
