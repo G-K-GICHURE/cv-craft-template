@@ -41,9 +41,9 @@ const Services = () => {
     },
     {
       icon: <Presentation className="w-8 h-8 text-cyan-500" />,
-      title: "Data Storytelling",
-      description: "Transform complex data insights into compelling narratives for stakeholders and decision-makers.",
-      skills: ["Visualization", "Reporting", "Presentation", "Communication"],
+      title: "Strategic Consulting",
+      description: "Provide data-driven strategic recommendations to optimize business operations and drive growth.",
+      skills: ["Business Strategy", "Performance Analysis", "ROI Optimization", "Market Research"],
       tools: ["Power BI", "Tableau", "Excel", "Qlik"]
     }
   ];

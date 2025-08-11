@@ -1,6 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Database, BarChart3, Code, Brain, Cloud, Wrench } from "lucide-react";
+import { Database, BarChart3, Code, Brain, Cloud, Wrench, ExternalLink } from "lucide-react";
 
 const Skills = () => {
   const skillCategories = [
@@ -8,61 +8,120 @@ const Skills = () => {
       icon: BarChart3,
       title: "Analytics & BI Tools",
       skills: [
-        { name: "Power BI", level: 95, certified: true },
-        { name: "Tableau", level: 90, certified: false },
-        { name: "Qlik Sense", level: 88, certified: false },
-        { name: "Advanced Excel", level: 92, certified: false }
+        { name: "Power BI", certified: true },
+        { name: "Tableau", certified: false },
+        { name: "Qlik Sense", certified: false },
+        { name: "Advanced Excel", certified: false }
       ]
     },
     {
       icon: Code,
       title: "Programming Languages",
       skills: [
-        { name: "Python", level: 90, certified: true },
-        { name: "SQL", level: 95, certified: false },
-        { name: "R", level: 75, certified: false },
-        { name: "JavaScript", level: 70, certified: false }
+        { name: "Python", certified: true },
+        { name: "SQL", certified: false },
+        { name: "R", certified: false },
+        { name: "JavaScript", certified: false }
       ]
     },
     {
       icon: Database,
       title: "Databases & Big Data",
       skills: [
-        { name: "Oracle", level: 88, certified: false },
-        { name: "SAP", level: 85, certified: false },
-        { name: "Apache Spark", level: 80, certified: true },
-        { name: "Hadoop", level: 75, certified: true }
+        { name: "Oracle", certified: false },
+        { name: "SAP", certified: false },
+        { name: "Apache Spark", certified: true },
+        { name: "Hadoop", certified: true }
       ]
     },
     {
       icon: Brain,
       title: "Data Science & ML",
       skills: [
-        { name: "Machine Learning", level: 85, certified: false },
-        { name: "Predictive Modeling", level: 88, certified: false },
-        { name: "Statistical Analysis", level: 90, certified: false },
-        { name: "Data Mining", level: 87, certified: false }
+        { name: "Machine Learning", certified: false },
+        { name: "Predictive Modeling", certified: false },
+        { name: "Statistical Analysis", certified: false },
+        { name: "Data Mining", certified: false }
       ]
     },
     {
       icon: Cloud,
       title: "Cloud & Platforms",
       skills: [
-        { name: "Microsoft Azure", level: 80, certified: false },
-        { name: "Google Colab", level: 85, certified: false },
-        { name: "Jupyter Notebooks", level: 90, certified: false },
-        { name: "GitHub", level: 85, certified: false }
+        { name: "Microsoft Azure", certified: false },
+        { name: "Google Colab", certified: false },
+        { name: "Jupyter Notebooks", certified: false },
+        { name: "GitHub", certified: false }
       ]
     },
     {
       icon: Wrench,
       title: "Tools & Frameworks",
       skills: [
-        { name: "ETL Development", level: 92, certified: false },
-        { name: "Data Visualization", level: 93, certified: true },
-        { name: "Business Process Analysis", level: 88, certified: false },
-        { name: "Project Management", level: 85, certified: false }
+        { name: "ETL Development", certified: false },
+        { name: "Data Visualization", certified: true },
+        { name: "Business Process Analysis", certified: false },
+        { name: "Project Management", certified: false }
       ]
+    }
+  ];
+
+  const certifications = [
+    { 
+      name: "Microsoft Power BI Data Analyst Associate", 
+      issuer: "Microsoft",
+      date: "2024",
+      verificationUrl: "https://learn.microsoft.com/api/credentials/share/en-us/your-verification-id",
+      badgeUrl: "https://images.credly.com/size/340x340/images/619f9d9b-2e66-4fc8-a91d-9d8b3b5efc82/image.png"
+    },
+    { 
+      name: "IBM: Data Analysis with Python", 
+      issuer: "IBM",
+      date: "2023",
+      verificationUrl: "https://www.coursera.org/account/accomplishments/certificate/your-cert-id",
+      badgeUrl: "https://images.credly.com/size/340x340/images/ba34f628-5b95-420f-b450-6ed7e5a9c4f1/image.png"
+    },
+    { 
+      name: "IBM: Python for Data Science", 
+      issuer: "IBM",
+      date: "2023",
+      verificationUrl: "https://www.coursera.org/account/accomplishments/certificate/your-cert-id",
+      badgeUrl: "https://images.credly.com/size/340x340/images/0571ab1d-f43b-43d9-9c68-8ebd0ebd61b7/Python_for_Data_Sci_and_AI_Foundational.png"
+    },
+    { 
+      name: "IBM: Data Visualization with Python", 
+      issuer: "IBM",
+      date: "2023",
+      verificationUrl: "https://www.coursera.org/account/accomplishments/certificate/your-cert-id",
+      badgeUrl: "https://images.credly.com/size/340x340/images/76326afb-199d-4250-a74f-01bc86dda118/Cognitive_Class_-_Data_Visual_w_Python.png"
+    },
+    { 
+      name: "IBM: Spark Level 1", 
+      issuer: "IBM",
+      date: "2023",
+      verificationUrl: "https://www.credly.com/badges/your-badge-id",
+      badgeUrl: "https://images.credly.com/size/340x340/images/11356b75-2f70-48b7-8574-a15bebec8d24/image.png"
+    },
+    { 
+      name: "IBM: Big Data 101", 
+      issuer: "IBM",
+      date: "2023",
+      verificationUrl: "https://www.credly.com/badges/your-badge-id",
+      badgeUrl: "https://images.credly.com/size/340x340/images/f22c9615-99c3-4d5e-b4d2-87ddc5c6e513/Big_Data_101.png"
+    },
+    { 
+      name: "IBM: Hadoop 101", 
+      issuer: "IBM",
+      date: "2023",
+      verificationUrl: "https://www.credly.com/badges/your-badge-id",
+      badgeUrl: "https://images.credly.com/size/340x340/images/9cf46d5f-fb86-41b5-8805-4f2e61e40b55/Hadoop_101.png"
+    },
+    { 
+      name: "PWC - Power BI Job Simulation", 
+      issuer: "PWC via Forage",
+      date: "2024",
+      verificationUrl: "https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/your-cert-id.pdf",
+      badgeUrl: "https://cdn.theforage.com/vinternships/companyassets/4sLyCPgmsy8DA6Dh3/4sCPgmsy8DA6Dh3_1585821939749_pwc%20logo.png"
     }
   ];
 
@@ -90,27 +149,18 @@ const Skills = () => {
                   <h3 className="text-lg font-semibold text-slate-800">{category.title}</h3>
                 </div>
                 
-                <div className="space-y-4">
+                <div className="flex flex-wrap gap-2">
                   {category.skills.map((skill, skillIndex) => (
-                    <div key={skillIndex} className="space-y-2">
-                      <div className="flex justify-between items-center">
-                        <div className="flex items-center gap-2">
-                          <span className="font-medium text-slate-700">{skill.name}</span>
-                          {skill.certified && (
-                            <Badge variant="secondary" className="bg-green-100 text-green-800 text-xs">
-                              Certified
-                            </Badge>
-                          )}
-                        </div>
-                        <span className="text-blue-600 font-semibold text-sm">{skill.level}%</span>
-                      </div>
-                      <div className="w-full bg-slate-200 rounded-full h-2">
-                        <div 
-                          className="bg-gradient-to-r from-blue-500 to-blue-600 h-2 rounded-full transition-all duration-500" 
-                          style={{ width: `${skill.level}%` }}
-                        />
-                      </div>
-                    </div>
+                    <Badge 
+                      key={skillIndex} 
+                      variant={skill.certified ? "default" : "secondary"}
+                      className={`${skill.certified ? 'bg-green-600 text-white' : 'bg-slate-100 text-slate-700'} hover:scale-105 transition-transform`}
+                    >
+                      {skill.name}
+                      {skill.certified && (
+                        <span className="ml-1 text-xs">✓</span>
+                      )}
+                    </Badge>
                   ))}
                 </div>
               </CardContent>
@@ -118,26 +168,35 @@ const Skills = () => {
           ))}
         </div>
 
-        <div className="mt-16 text-center">
-          <Card className="max-w-4xl mx-auto p-8 bg-gradient-to-br from-blue-50 to-blue-100">
-            <h3 className="text-2xl font-bold text-slate-800 mb-4">Certifications & Achievements</h3>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-              {[
-                "Microsoft Power BI Data Analyst Associate",
-                "IBM: Data Analysis with Python",
-                "IBM: Python for Data Science",
-                "IBM: Data Visualization with Python",
-                "IBM: Spark Level 1",
-                "IBM: Big Data 101",
-                "IBM: Hadoop 101",
-                "PWC - Power BI Job Simulation"
-              ].map((cert, index) => (
-                <Badge key={index} variant="outline" className="p-2 text-center bg-white border-blue-200">
-                  {cert}
-                </Badge>
-              ))}
-            </div>
-          </Card>
+        <div className="mt-16">
+          <h3 className="text-3xl font-bold text-slate-800 text-center mb-8">Professional Certifications</h3>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {certifications.map((cert, index) => (
+              <Card key={index} className="text-center hover:shadow-lg transition-all duration-300 group border-l-4 border-l-green-500">
+                <CardContent className="p-4">
+                  <div className="mb-4 flex justify-center">
+                    <img 
+                      src={cert.badgeUrl} 
+                      alt={cert.name}
+                      className="w-16 h-16 object-contain group-hover:scale-110 transition-transform"
+                    />
+                  </div>
+                  <h4 className="font-semibold text-sm text-slate-800 mb-2 leading-tight">{cert.name}</h4>
+                  <p className="text-xs text-slate-600 mb-1">{cert.issuer}</p>
+                  <p className="text-xs text-slate-500 mb-3">{cert.date}</p>
+                  <a 
+                    href={cert.verificationUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 text-xs text-blue-600 hover:text-blue-800 font-medium"
+                  >
+                    Verify Certificate
+                    <ExternalLink size={12} />
+                  </a>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </div>
       </div>
     </section>
