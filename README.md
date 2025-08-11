@@ -119,19 +119,70 @@ location: "Nairobi, Kenya",
 **Option 3: Use your preferred IDE**
 Clone this repo and push changes:
 
-## What technologies are used for this project?
+```sh
+# Clone the repository
+git clone <YOUR_GIT_URL>
 
-This project is built with:
+# Navigate to project directory  
+cd <YOUR_PROJECT_NAME>
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+# Install dependencies
+npm install
 
-## How can I deploy this project?
+# Start development server
+npm run dev
+```
 
-Simply open [Lovable](https://lovable.dev/projects/77657f75-33fc-42f4-ae1c-85f99bd3537b) and click on Share -> Publish.
+## 📥 How to Download and Host Locally
+
+### Option 1: Download from GitHub
+1. Go to your GitHub repository
+2. Click the green "Code" button
+3. Select "Download ZIP"
+4. Extract the ZIP file
+5. Open terminal/command prompt in the extracted folder
+6. Run the commands above (`npm install` then `npm run dev`)
+
+### Option 2: Clone Repository
+```sh
+# If you have Git installed, clone directly:
+git clone https://github.com/your-username/your-repo-name.git
+cd your-repo-name
+npm install
+npm run dev
+```
+
+### Option 3: Use GitHub Codespaces (Cloud Development)
+1. Go to your GitHub repository
+2. Click "Code" → "Codespaces" → "New codespace"
+3. Wait for environment to load
+4. Run `npm run dev` in the terminal
+5. Open the preview URL
+
+### Requirements
+- **Node.js** (version 16 or higher) - [Download here](https://nodejs.org/)
+- **npm** (comes with Node.js)
+- **Code editor** (VS Code recommended)
+
+### After Setup
+- Your portfolio will be available at `http://localhost:5173`
+- Changes to files will automatically refresh the page
+- To build for production: `npm run build`
+
+## 🚀 Deploy to Other Platforms
+
+### Netlify (Free)
+1. Build your project: `npm run build`
+2. Upload the `dist` folder to [Netlify](https://netlify.com)
+
+### Vercel (Free)  
+1. Connect your GitHub repo to [Vercel](https://vercel.com)
+2. Auto-deploy on every push
+
+### GitHub Pages
+1. Install gh-pages: `npm install --save-dev gh-pages`
+2. Add to package.json scripts: `"deploy": "npm run build && gh-pages -d dist"`
+3. Run: `npm run deploy`
 
 ## Can I connect a custom domain to my Lovable project?
 
