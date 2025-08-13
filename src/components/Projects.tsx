@@ -242,7 +242,7 @@ const Projects = () => {
               <p className="text-slate-600">Major Clients Served</p>
             </Card>
             <Card className="text-center p-6 bg-gradient-to-br from-green-50 to-green-100">
-              <h4 className="text-3xl font-bold text-green-600 mb-2">High</h4>
+              <h4 className="text-3xl font-bold text-green-600 mb-2">100%</h4>
               <p className="text-slate-600">Data Accuracy Achieved</p>
             </Card>
             <Card className="text-center p-6 bg-gradient-to-br from-purple-50 to-purple-100">
