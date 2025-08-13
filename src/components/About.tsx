@@ -122,7 +122,7 @@ const About = () => {
             <div className="space-y-4">
               <div className="flex justify-between items-center">
                 <span className="font-medium text-card-foreground">Data Analytics & BI</span>
-                <span className="text-primary font-semibold">95%</span>
+                <span className="text-primary font-semibold">95</span>
               </div>
               <div className="w-full bg-muted rounded-full h-2">
                 <div className="bg-primary h-2 rounded-full" style={{ width: '95%' }}></div>
@@ -130,7 +130,7 @@ const About = () => {
               
               <div className="flex justify-between items-center">
                 <span className="font-medium text-card-foreground">Python & SQL</span>
-                <span className="text-primary font-semibold">92%</span>
+                <span className="text-primary font-semibold">92</span>
               </div>
               <div className="w-full bg-muted rounded-full h-2">
                 <div className="bg-primary h-2 rounded-full" style={{ width: '92%' }}></div>
@@ -138,7 +138,7 @@ const About = () => {
               
               <div className="flex justify-between items-center">
                 <span className="font-medium text-card-foreground">Machine Learning</span>
-                <span className="text-primary font-semibold">85%</span>
+                <span className="text-primary font-semibold">85</span>
               </div>
               <div className="w-full bg-muted rounded-full h-2">
                 <div className="bg-primary h-2 rounded-full" style={{ width: '85%' }}></div>
